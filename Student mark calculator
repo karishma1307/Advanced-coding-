@@ -1,0 +1,43 @@
+# Advanced-coding-
+#include <stdio.h>
+
+int main() {
+    char name[50];
+    int n, i;
+    float marks[50], total = 0, avg;
+
+    printf("Enter student name: ");
+    scanf("%s", name);
+
+    printf("Enter number of subjects: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++) {
+        printf("Enter marks for subject %d: ", i + 1);
+        scanf("%f", &marks[i]);
+        total += marks[i];
+    }
+
+    avg = total / n;
+
+    printf("\n----- Student Mark Report -----\n");
+    printf("Name       : %s\n", name);
+    printf("Subjects   : %d\n", n);
+    printf("Total Marks: %.2f\n", total);
+    printf("Average    : %.2f\n", avg);
+
+    if (avg >= 90)
+        printf("Grade      : A+\n");
+    else if (avg >= 80)
+        printf("Grade      : A\n");
+    else if (avg >= 70)
+        printf("Grade      : B\n");
+    else if (avg >= 60)
+        printf("Grade      : C\n");
+    else if (avg >= 50)
+        printf("Grade      : D\n");
+    else
+        printf("Grade      : Fail\n");
+
+    return 0;
+}
