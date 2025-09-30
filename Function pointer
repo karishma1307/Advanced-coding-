@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// Function declarations
+int add(int a, int b) {
+    return a + b;
+}
+
+int subtract(int a, int b) {
+    return a - b;
+}
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+int divide(int a, int b) {
+    if (b != 0)
+        return a / b;
+    else {
+        printf("Division by zero error!\n");
+        return 0;
+    }
+}
+
+int main() {
+    // Declare a function pointer
+    int (*operation)(int, int);
+
+    int x = 20, y = 10;
+
+    // Assign add function to pointer
+    operation = add;
+    printf("Addition: %d\n", operation(x, y));
+
+    // Assign subtract function to pointer
+    operation = subtract;
+    printf("Subtraction: %d\n", operation(x, y));
+
+    // Assign multiply function to pointer
+    operation = multiply;
+    printf("Multiplication: %d\n", operation(x, y));
+
+    // Assign divide function to pointer
+    operation = divide;
+    printf("Division: %d\n", operation(x, y));
+
+    return 0;
+}
